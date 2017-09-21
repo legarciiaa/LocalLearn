@@ -31,11 +31,14 @@
         "angular2-jwt": "^0.2.3",
         "angular2-swing": "^0.14.0",
         "cordova-android": "^6.2.3",
+        "cordova-ios": "^4.4.0",
+        "cordova-plugin-add-swift-support": "^1.6.1",
         "cordova-plugin-app-event": "file:node_modules\\cordova-plugin-app-event",
         "cordova-plugin-compat": "^1.0.0",
         "cordova-plugin-console": "1.0.5",
         "cordova-plugin-device": "1.1.4",
         "cordova-plugin-geolocation": "^2.4.3",
+        "cordova-plugin-ionic": "^1.1.9",
         "cordova-plugin-mauron85-background-geolocation": "^2.2.5",
         "cordova-plugin-splashscreen": "~4.0.1",
         "cordova-plugin-statusbar": "2.2.2",
@@ -77,10 +80,18 @@
             "cordova-plugin-mauron85-background-geolocation": {
                 "ACCOUNT_TYPE": "$PACKAGE_NAME.account",
                 "CONTENT_AUTHORITY": "$PACKAGE_NAME"
+            },
+            "cordova-plugin-ionic": {
+                "APP_ID": "bfcea1a6",
+                "CHANNEL_NAME": "Master",
+                "UPDATE_METHOD": "background",
+                "UPDATE_API": "https://api.ionicjs.com",
+                "MAX_STORE": "2"
             }
         },
         "platforms": [
-            "android"
+            "android",
+            "ios"
         ]
     }
 }
