@@ -1,0 +1,138 @@
+// Font path is used to include ionicons,
+// roboto, and noto sans fonts
+$font-path: "../assets/fonts";
+
+
+// The app direction is used to include
+// rtl styles in your app. For more info, please see:
+// http://ionicframework.com/docs/theming/rtl-support/
+$app-direction: ltr;
+
+@import "ionic.globals";
+
+
+// Shared Variables
+// --------------------------------------------------
+// To customize the look and feel of this app, you can override
+// the Sass variables found in Ionic's source scss files.
+// To view all the possible Ionic variables, see:
+// http://ionicframework.com/docs/theming/overriding-ionic-variables/
+
+
+// Named Color Variables
+// --------------------------------------------------
+// Named colors makes it easy to reuse colors on various components.
+// It's highly recommended to change the default colors
+// to match your app's branding. Ionic uses a Sass map of
+// colors so you can add, rename and remove colors as needed.
+// The "primary" color is the only required color in the map.
+
+// App Theme
+// --------------------------------------------------
+// Ionic apps can have different themes applied, which can
+// then be future customized. This import comes last
+// so that the above variables are used and Ionic's
+// default are overridden.
+
+@import "ionic.theme.default";
+
+
+// Ionicons
+// --------------------------------------------------
+// The premium icon font for Ionic. For more info, please see:
+// http://ionicframework.com/docs/ionicons/
+
+@import "ionic.ionicons";
+
+
+// Fonts
+// --------------------------------------------------
+
+@import "roboto";
+@import "noto-sans";
+
+@import url(https://fonts.googleapis.com/css?family=Poppins);
+
+ion-button{
+  font-family: "Poppins", sans-serif;
+}
+
+.login-logo{
+  margin: 0 auto;
+  font-family: 'Pacifico', cursive;
+  font-size: 40px; 
+  padding: 10px;
+  text-align: center;
+  color: #444;
+}
+
+.app-img {
+    background: url('https://locallearn.000webhostapp.com/images/backg1.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -webkit-font-smoothing:  antialiased;
+    background-size:cover;
+ }
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column; 
+  justify-content: center;
+  width: 100%;
+  min-height: 100%;
+  padding: 20px;
+}
+
+#formContent {
+  -webkit-border-radius: 10px 10px 10px 10px;
+  border-radius: 10px 10px 10px 10px;
+  background: #fff;
+  padding: 10px;
+  width: 90%;
+  position: center;
+  padding: 0px;
+  -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+  box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+  text-align: center;
+}
+
+.no-scroll .scroll-content{
+  overflow: hidden;
+}
+
+.tag_name {
+	font-family: 'Roboto Slab', serif;	
+	font-size  : 12px;
+	font-weight: 700;
+	letter-spacing: 0.05em;
+	margin-bottom: 15px;
+	text-transform: uppercase;
+}
+
+.tag_content {
+  font-size  : 30px;
+  font-weight: bold;  
+  text-align: center;
+}
+
+.tag_resume {
+  font-size  : 20px;
+  font-weight: bold;  
+  text-align: center;
+  padding: 5 px;
+}
+
+.red {
+  color: #ef5350;
+  text-align: right;
+  padding: 5px;
+}
+
+.blue {
+	color: #0277bd;
+}
+
+
+
+

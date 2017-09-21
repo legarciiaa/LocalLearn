@@ -1,0 +1,44 @@
+<!--
+  Generated template for the ResumeDayPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>  
+  <ion-navbar>
+   <button menuToggle >
+     <ion-icon color ="primary" name="menu"></ion-icon>
+   </button>
+     <ion-title>Resume Day</ion-title>
+   </ion-navbar>
+</ion-header>
+
+
+<ion-content padding class="app-img" >
+     <ion-card>
+        <ion-card-header>
+          TODAY YOU LEARN
+        </ion-card-header>
+        <ion-card-content>
+            <ion-item *ngFor="let resume of resumeDayTypes">
+               {{resume.ContarDecdTipoConteudo}} {{resume.descTipoConteudo}}
+            </ion-item>
+        </ion-card-content>
+      </ion-card>
+      
+      <ion-card>
+        <ion-card-header>
+          TOP 10 WORD'S DAY
+        </ion-card-header>
+        <ion-card-content>
+            <ion-item *ngFor="let resumeCont of resumeDayContent">
+              {{resumeCont.descConteudo}}
+              <p>{{resumeCont.traducao}}</p>
+            </ion-item>
+        </ion-card-content>
+      </ion-card>
+      
+      <ion-col>
+        <button ion-button full (click)="getContentPlace()">Show me more content</button>
+      </ion-col>
+</ion-content>

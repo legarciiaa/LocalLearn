@@ -1,0 +1,73 @@
+<!--
+  Generated template for the Content page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyACEpXgTfwCCU0GujgA2t9tMFdc7vf429k&libraries=places"></script>    
+  <script src="cordova.js"></script> 
+-->
+  <ion-header no-border>    
+      <ion-navbar>
+        <button menuToggle >
+            <ion-icon color ="primary" name="menu"></ion-icon>
+        </button>
+        <ion-title >
+          Conteúdo/Content
+        </ion-title>
+      </ion-navbar>
+    </ion-header>
+    
+    <ion-content padding="true" class="app-img">
+        
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZVoR8gop28DrzN_M4KbRTMouEawyzLUg&libraries=places&callback=initMap" async defer></script>
+        
+        <div swing-stack #myswing1 [stackConfig]="stackConfig" (click)="voteUp()" id="card-stack">                  
+          <div #mycards1 swing-card *ngFor="let c of cards" class="container">            
+              <div class="tag_name blue">You are nearby at</div>              
+              <div class="company">
+                <!-- place -->                                                              
+                <div class="c_logo">
+                     <img src="https://locallearn.000webhostapp.com/images/map.jpg">
+                </div>  
+                <div class="c_info"> 
+                     <a href="#" class="c_name">{{currentPlace.name}}</a><br>                                             
+                </div>            
+                <span class="c_industry">{{currentPlace.address}}</span><br>
+                <!-- end place -->
+                
+                <div class="tag_name red">{{ c.desctipoConteudo }}</div>
+
+                <div class="c_content">                                                  
+                     <h1 class="tag_content">{{ c.descConteudo }}</h1>
+                     <h3 class="title">{{ c.traducao }}</h3>
+                     <p class="review">{{ c.descComplementar }} </p>
+                </div>                
+              </div> <!-- end .company -->
+              
+              <div *ngIf="c.exemploConteudo" class="c_content">
+                    <div class="tag_name">Example/Exemplo</div>         
+                    <p class="review">{{ c.exemploConteudo }} </p>                 
+              </div> <!-- end .user -->
+
+              <div *ngIf="c.imgConteudo" class='bg'>
+                   <img src="c.imgConteudo">
+              </div>
+              
+                <div class="tag_name orange">
+                    <ion-icon name="arrow-forward"></ion-icon>
+                    Tap to the next
+                </div> 
+                <div class="c_industry">SEACHING IN RADIUS: {{currentPlace.radius}} meters</div>               
+              
+              </div> <!-- end .container -->          
+        </div> <!-- end .stack -->              
+        <div id="map"></div>
+        <!--<div>
+            <button ion-button full (click)="lastCards()">Show the last card again</button>
+        </div> -->              
+      <ion-footer >            
+           <button ion-button full (click)="getContentPlace()">Show me more content</button>
+      </ion-footer>
+    </ion-content>
+    

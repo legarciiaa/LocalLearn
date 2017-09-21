@@ -1,0 +1,71 @@
+<!--
+  Generated template for the Register page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>Registro/Register</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="app-img">     
+  <form [formGroup]="objUser" (ngSubmit)="addUser()">
+    <ion-list>
+        <ion-item>
+          <ion-label floating>Nome/Name</ion-label>
+          <ion-input type="text"  name="name" formControlName="name"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label floating>E-mail</ion-label>
+          <ion-input type="email"  name="email" formControlName="email"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label stacked>Senha/Password </ion-label>
+          <ion-input type="password"  placeholder="min. 6 characters" name="pwd" formControlName="pwd"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label floating>Confirm Password</ion-label>
+          <ion-input type="password"  name="confirmPwd" formControlName="confirmPwd"></ion-input>
+        </ion-item>
+
+        <ion-item class='form-text error' *ngIf="objUser.controls.confirmPwd.touched && objUser.hasError('Confirm Password Error') && userForm.controls.password.valid">
+          <ion-label no-margin stacked>As senhas não conferem. / Passwords do not match.</ion-label>
+        </ion-item>
+        
+        <ion-item>
+          <ion-label floating>Data de Nascimento/Birthday</ion-label>
+          <!--<ion-input type="text"  name="dtBirth" formControlName="dtBirth"></ion-input>
+          -->
+          <ion-datetime displayFormat="DD/MM/YYYY" max="2005-12-31" name="dtBirth" formControlName="dtBirth"></ion-datetime>
+        </ion-item>
+        
+        <ion-item>
+          <ion-label floating>Área de atuação/Occupation area</ion-label>
+          <ion-select  name="actArea" formControlName="actArea">
+             <ion-option  *ngFor="let area of areas" [value]="area.cdAreaAtuacao">{{area.descAreaAtuacao}}</ion-option>
+          </ion-select>
+       </ion-item>
+
+        <ion-item> 
+           <ion-label>      
+              Tempo de notificação (min)
+              <p>Notification time</p>    
+            </ion-label>     
+           <ion-range min="10" max="120" value= "30" pin="true"  name="timeNotify" formControlName="timeNotify" >          
+              <ion-label range-left>10</ion-label>
+              <ion-label range-right>120</ion-label>
+           </ion-range>
+      </ion-item>      
+    </ion-list>
+
+    <button ion-button full block [disabled]="objUser.invalid">Cadastrar/Register</button>
+    </form>    
+    <ion-col>
+      <button ion-button full block (click)="cancelRegister()">Cancel</button>
+    </ion-col>
+</ion-content>

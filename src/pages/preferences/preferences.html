@@ -1,0 +1,86 @@
+<!--
+  Generated template for the Preferences page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header no border>
+  <ion-navbar>
+    <button menuToggle>
+        <ion-icon color ="primary" name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Preferences
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="app-img">    
+    <ion-card  class="user-card">
+    <ion-item>
+       <ion-icon color ="primary" name="person" item-start large></ion-icon>
+       <strong style="text-align: center">USER: {{objUser.name}}</strong>
+       <p> {{objUser.email}}</p>       
+    </ion-item>
+  </ion-card>
+  
+     <ion-card> 
+      <ion-card-header style="text-align: center">
+        <h2>EU QUERO APRENDER..</h2>
+        <p>I want to learn..</p> 
+      </ion-card-header>
+      
+      <ion-item> 
+        <ion-label>
+          <strong>{{objUser.percVocabulario}} % </strong>
+          Vocabulário 
+          <p>Vocabulary</p>    
+        </ion-label>
+        <ion-range (ionChange)="recalcVocabulario()" value="34" min="0" max="100" [(ngModel)]="objUser.percVocabulario" pin="true">
+          <ion-label>teste</ion-label>>
+          <ion-label range-left>0</ion-label>
+          <ion-label range-right>100</ion-label>
+        </ion-range>
+    </ion-item>
+
+      <ion-item>
+        <ion-label>
+          <strong>{{objUser.percVerbos}} % </strong>
+          Verbos
+          <p>Verbs</p>    
+        </ion-label>
+        <ion-range (ionChange)="recalcVerbos()"  value="33" min="0" max="100" [(ngModel)]="objUser.percVerbos" pin="true" >          
+            <ion-label range-left>0</ion-label>
+            <ion-label range-right>100</ion-label>
+          </ion-range>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>
+          <strong>{{objUser.percFrases}} % </strong>
+          Frases
+          <p>Phrases</p>    
+        </ion-label>
+        <ion-range (ionChange)="recalcFrases()" value="33" min="0" max="100" [(ngModel)]="objUser.percFrases" pin="true" >          
+            <ion-label range-left>0</ion-label>
+            <ion-label range-right>100</ion-label>
+        </ion-range>
+      </ion-item>
+    
+    <ion-item>
+      <ion-label>      
+        <strong>{{objUser.timeNotify}} </strong>
+        Tempo de notificação (min)
+        <p>Notification time</p>    
+      </ion-label>     
+      <ion-range min="10" max="120" value="objUser.timeNotify" [(ngModel)]="objUser.timeNotify" pin="true">
+        <ion-label range-left>10</ion-label>
+        <ion-label range-right>120</ion-label>
+      </ion-range>
+    </ion-item>
+  </ion-card>
+  <button (click)= savePreferences() ion-button full block>Salvar/Save</button>    
+</ion-content>
+
+
+

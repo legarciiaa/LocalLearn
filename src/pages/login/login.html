@@ -1,0 +1,42 @@
+<ion-header>
+</ion-header>
+
+<!---image in https://www.pexels.com/photo/activity-adventure-blur-business-297642/-->
+<ion-content class="app-img no-scroll">
+    <div class="wrapper fadeInDown">
+        <div id="formContent">
+          
+          <!-- Icon -->
+          <div class="fadeIn first">             
+            <img src="https://locallearn.000webhostapp.com/images/map.jpg" id="icon" alt="User Icon" />
+            <h1 class="login-logo">Local Learn</h1>            
+          </div>
+      
+          <!-- Login Form -->
+          <form [formGroup]="objUser" (ngSubmit)="login()">           
+              <ion-list class="list">
+                <ion-item>
+                  <ion-label floating>E-mail</ion-label>
+                  <ion-input type="email"  name="email" class="fadeIn second" formControlName="email"></ion-input>
+                </ion-item>
+          
+                <ion-item>
+                  <ion-label floating>Senha/Password</ion-label>
+                  <ion-input type="password"  name="pwd" class="fadeIn third" formControlName="pwd"></ion-input>
+                </ion-item>
+              </ion-list>
+          
+              <ion-row>
+                 <ion-col>
+                    <button class="fadeIn fourth" ion-button full block [disabled]="objUser.invalid">Login</button>          
+                </ion-col>
+              </ion-row>    
+          </form>
+      
+          <!-- Register -->
+          <ion-col>
+             <button class="underlineHover" ion-button full block (click)="createAccount()">Create New Account</button>
+          </ion-col>
+        </div>
+      </div>   
+</ion-content>
